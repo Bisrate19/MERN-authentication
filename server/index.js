@@ -5,7 +5,9 @@ const mongoose=require('mongoose')
 
 
 
-mongoose.connect
+mongoose.connect (process.env.MONGO_URL)
+.then(()=>console.log('Database Connected'))
+.catch((err)=>console.log('Database not Connected',err))
 
 const app = express();
 

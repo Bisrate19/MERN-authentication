@@ -1,9 +1,7 @@
+const test = (req, res) => {
+  res.json("test is working");
+};
 
-
-const test=(req,res)=>{
-    res.json('test is working')
-}
-
-module exports={
-    test
-}
+module.exports = {
+  test
+};

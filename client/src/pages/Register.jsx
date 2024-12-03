@@ -1,6 +1,7 @@
 import { useState } from "react";
 import React from "react";
 import axios from 'axios';
+import {toast} from "react-hot-toast";
 
 export default function Register() {
   const [data, setData] = useState({
@@ -13,6 +14,13 @@ const registerUser = async(e) => {
   const{name, email, password}= data
 try {
   const {data} =await axios.post('register', {name, email,password})
+  if (data.error){
+    toast.error(data.error)
+  }else
+  {setData({})
+  toast.success('login succsessful,  wellcome')
+
+  }
 } catch (error) {
   
 }

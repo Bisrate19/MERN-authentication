@@ -42,8 +42,21 @@ const registerUser = async (req, res) => {
 };
 
 //Login endpoint
-const loginUser =(req, res)=>{
+const loginUser = async (req, res)=>{
+try {
+  const {email,password}= req.body;
+  //check if user exist
 
+const user=   await User.findOne({email})
+if (!user){
+  return res.json({
+    error: 'no user found'
+  })
+}
+
+} catch (error) {
+  
+}
 }
 
 module.exports = {

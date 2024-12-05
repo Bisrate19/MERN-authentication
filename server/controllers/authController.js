@@ -3,7 +3,7 @@ const { hashPassword, comparePassword } = require("../helpers/auth");
 const test = (req, res) => {
   res.json("test is working");
 };
-
+//register end point
 const registerUser = async (req, res) => {
   try {
     const { name, email, password } = req.body;
@@ -41,7 +41,13 @@ const registerUser = async (req, res) => {
   }
 };
 
+//Login endpoint
+const loginUser =(req, res)=>{
+
+}
+
 module.exports = {
   test,
   registerUser,
+  loginUser
 };

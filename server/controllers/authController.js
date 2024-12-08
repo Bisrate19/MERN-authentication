@@ -60,7 +60,7 @@ const loginUser = async (req, res) => {
     const match = await comparePassword(password, user.password);
 
     if (match) {
-      res.json("passwords match");
+      res.json("passwords match  ");
     }
     if(!match){
       res.json({
